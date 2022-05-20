@@ -5,7 +5,7 @@ import { PokemonData, Pokemon } from "../types";
 class PokeState {
   pokemons: Pokemon[] = [];
   currentPokemon?: Pokemon = undefined;
-  items = 20;
+  items = 10;
   page = 1;
   nextUrl = "";
   prevUrl = "";
