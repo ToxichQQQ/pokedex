@@ -6,7 +6,7 @@ import { toJS } from "mobx";
 import pokeState from "../../store/pokeState";
 import "./MainPage.css";
 import { observer } from "mobx-react-lite";
-import { pokemonTypesArr } from "../../constans";
+import { pokemonTypesArr } from "../../constants";
 
 export const MainPage: FC = observer(() => {
   const pokeInfo = [...toJS(pokeState.pokemons)];
@@ -32,6 +32,8 @@ export const MainPage: FC = observer(() => {
         </Col>
         <Col span={16}>
           <Input
+            value={filter}
+            data-test="input"
             placeholder="Search pokemon"
             onChange={(e) => setFilter(e.target.value)}
           />
@@ -42,6 +44,7 @@ export const MainPage: FC = observer(() => {
           />
         </Col>
         <Pagination
+          data-test="pagination"
           className="pagination"
           total={1114}
           onChange={handleChange}

@@ -2,18 +2,23 @@ import React, { useEffect } from "react";
 import pokeState from "../../store/pokeState";
 import "./PokemonPage.css";
 import "../../pokemonsColor.css";
-import { Col, Row } from "antd";
+import { Button, Col, Row, Tooltip } from "antd";
 import { toJS } from "mobx";
 import { useNavigate } from "react-router-dom";
+import { BackwardOutlined } from "@ant-design/icons";
 
 export const PokemonPage = () => {
   const navigate = useNavigate();
   const pokemon = toJS(pokeState.currentPokemon);
   const pokemonCardStyle = `pokemonCard ${pokemon?.types[0].type.name}`;
 
+  const handleBackToHomePage = () => {
+    navigate("/");
+  };
+
   useEffect(() => {
     if (!pokemon) {
-      navigate("/");
+      handleBackToHomePage();
     }
   }, []);
 
@@ -21,6 +26,13 @@ export const PokemonPage = () => {
     <div className="pokemonContainer">
       <Row justify="center">
         <Col span={12} className={pokemonCardStyle}>
+          <Tooltip title="Back" className="pokemonCardBackButton">
+            <Button
+              data-test="back-btn"
+              onClick={handleBackToHomePage}
+              icon={<BackwardOutlined />}
+            />
+          </Tooltip>
           <img
             className="pokemonCardImg"
             src={
