@@ -6,12 +6,10 @@ import { toJS } from "mobx";
 import pokeState from "../../store/pokeState";
 import "./MainPage.css";
 import { observer } from "mobx-react-lite";
-import { pokemonTypesArr } from "../../constants";
 
 export const MainPage: FC = observer(() => {
   const pokeInfo = [...toJS(pokeState.pokemons)];
   const [filter, setFilter] = useState("");
-  const [pokemonTypes, setPokemonTypes] = useState(pokemonTypesArr);
 
   const handleChange = (page: number) => {
     pokeState.page = page;
