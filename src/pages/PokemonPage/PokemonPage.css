@@ -1,0 +1,30 @@
+.pokemonContainer {
+  position: relative;
+  top: 20%;
+}
+
+.pokemonCard {
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+.pokemonCardImg {
+  height: 300px;
+}
+
+.pokemonCardHeader {
+  color: #777f7e;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.pokemonCardItems {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .pokemonCardImg {
+    height: 100px;
+  }
+}

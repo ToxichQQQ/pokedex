@@ -1,0 +1,17 @@
+.card {
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  min-height: 175px;
+  transition: 1s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-img {
+  max-height: 100px;
+}
